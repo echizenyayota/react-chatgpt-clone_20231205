@@ -13,7 +13,9 @@ const App = () => {
           <p>Made by Echizenya</p>
         </nav>
       </section>
-      <section className="main"></section>
+      <section className="main">
+        
+      </section>
     </div>
   );
 }
