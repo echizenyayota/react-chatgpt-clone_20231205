@@ -8,7 +8,7 @@ const App = () => {
     const options = {
       method: "POST",
       body: JSON.stringify({
-        message: "How are you?"
+        message: value
       }),
       headers: {
         "Content-Type": "application/json",
@@ -24,7 +24,7 @@ const App = () => {
     };
   }
 
-  console.log(value);
+  console.log(message);
 
   return (
     <div className="app">
