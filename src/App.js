@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const App = () => {
-
+  const [value, setValue] = useState(null);
   const [message, setMessage] = useState(null);
 
   const getMessages = async() => {
@@ -24,6 +24,8 @@ const App = () => {
     };
   }
 
+  console.log(value);
+
   return (
     <div className="app">
       <section className="side-bar">
@@ -44,7 +46,7 @@ const App = () => {
         </ul>
         <div className="bottom-section">
           <div className="input-container">
-            <input/>
+            <input value={value} onChange={(e) => setValue(e.target.value)} />
             <div id="submit" onClick={getMessages}>➢</div>
           </div>
           <p className="info">
