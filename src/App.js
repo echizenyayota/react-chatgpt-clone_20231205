@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 const App = () => {
   const [value, setValue] = useState(null);
   const [message, setMessage] = useState(null);
+  const [previousChats, setPreviousChats] = useState([]);
 
   const getMessages = async() => {
     const options = {
@@ -24,7 +25,9 @@ const App = () => {
     };
   }
 
-  console.log(message);
+  useEffect(() => {
+
+  }, [message]);
 
   return (
     <div className="app">
