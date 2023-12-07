@@ -4,7 +4,7 @@ const App = () => {
   const [value, setValue] = useState(null);
   const [message, setMessage] = useState(null);
   const [previousChats, setPreviousChats] = useState([]);
-  const [currentTitle, setCurrentTitle] = useState([]);
+  const [currentTitle, setCurrentTitle] = useState(null);
 
   const getMessages = async() => {
     const options = {
@@ -50,6 +50,8 @@ const App = () => {
 
   }, [message, currentTitle]);
 
+  console.log(previousChats);
+
   return (
     <div className="app">
       <section className="side-bar">
@@ -64,7 +66,7 @@ const App = () => {
         </nav>
       </section>
       <section className="main">
-      <h1>EchizenyaGPT</h1>
+        {!currentTitle && <h1>EchizenyaGPT</h1>}
         <ul className="feed">
 
         </ul>
