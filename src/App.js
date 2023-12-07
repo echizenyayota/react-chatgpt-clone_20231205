@@ -4,6 +4,7 @@ const App = () => {
   const [value, setValue] = useState(null);
   const [message, setMessage] = useState(null);
   const [previousChats, setPreviousChats] = useState([]);
+  const [currentTitle, setCurrentTitle] = useState([]);
 
   const getMessages = async() => {
     const options = {
@@ -26,8 +27,28 @@ const App = () => {
   }
 
   useEffect(() => {
+    console.log(currentTitle, value, message);
+    if (!currentTitle && value &&  message) {
+      setCurrentTitle(value);
+    }
+    if (currentTitle && value &&  message) {
+      setPreviousChats(prevChats => (
+        [...prevChats, 
+          {
+            title: currentTitle,
+            role: "user",
+            content: value,
+          }, 
+          {
+            title: currentTitle,
+            role: message.role, 
+            content: message.content,
+          }
+        ]
+      ))
+    }
 
-  }, [message]);
+  }, [message, currentTitle]);
 
   return (
     <div className="app">
