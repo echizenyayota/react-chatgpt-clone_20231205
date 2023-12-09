@@ -58,16 +58,13 @@ const App = () => {
 
   console.log(previousChats);
 
-  const currentChatTitle = previousChats.filter(previousChat => previousChat.title === currentTitle);
+  const currentChat = previousChats.filter(previousChat => previousChat.title === currentTitle);
 
   return (
     <div className="app">
       <section className="side-bar">
         <button onClick={createNewChat}>+ New Chat</button>
         <ul className="history">
-          <li>aaaaa</li>
-          <li>bbbb</li>
-          <li>cccccccc</li>
         </ul>
         <nav>
           <p>Made by Echizenya</p>
